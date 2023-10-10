@@ -1,0 +1,64 @@
+name: uni_project
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  awesome_dialog:
+  flutter_rating_bar: ^4.0.1
+  shared_preferences: ^2.0.17
+  dio:
+  bloc:
+  flutter_bloc:
+  smooth_page_indicator: ^1.0.0+2
+  awesome_icons:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+     - assets/icons/
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  fonts:
+    - family: Poppins
+      fonts:
+       - asset: assets/fonts/poppins/Poppins-100.ttf
+         weight: 100
+       - asset: assets/fonts/poppins/Poppins-200.ttf
+         weight: 200
+       - asset: assets/fonts/poppins/Poppins-300.ttf
+         weight: 300
+       - asset: assets/fonts/poppins/Poppins-400.ttf
+         weight: 400
+       - asset: assets/fonts/poppins/Poppins-500.ttf
+         weight: 500
+       - asset: assets/fonts/poppins/Poppins-600.ttf
+         weight: 600
+       - asset: assets/fonts/poppins/Poppins-700.ttf
+         weight: 700
+       - asset: assets/fonts/poppins/Poppins-800.ttf
+         weight: 800
+       - asset: assets/fonts/poppins/Poppins-900.ttf
+         weight: 900
