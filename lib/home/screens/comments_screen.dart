@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:uni_project/home/components/customized_rating_bar.dart';
 import 'package:uni_project/home/cubit/comments_cubit.dart';
 import 'package:uni_project/home/states/comments_states.dart';
 
@@ -27,9 +27,8 @@ class CommentsScreen extends StatelessWidget {
                   IconButton(
                     icon: const Icon(
                       Icons.arrow_back_ios,
-                      size: 20,
                     ),
-                    color: Colors.white,
+                    iconSize: 20.0,
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -62,22 +61,7 @@ class CommentsScreen extends StatelessWidget {
                                 color: Colors.white,
                               ),
                         ),
-                        RatingBar.builder(
-                          initialRating: 3,
-                          minRating: 1,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemSize: 20.0,
-                          glowColor: Colors.amber,
-                          itemBuilder: (context, _) => const Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                          onRatingUpdate: (rating) {
-                            print(rating);
-                          },
-                        ),
+                        CustomizedRatingBar(itemSize: 20.0),
                       ],
                     ),
                   ),

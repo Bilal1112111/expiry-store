@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uni_project/authentication/authentication_components/auth_field.dart';
 import 'package:uni_project/authentication/authentication_components/default_button.dart';
 
-import '../../authentication/screens/forget_password_screen.dart';
 import '../../authentication/screens/login_screen.dart';
 import '../cubit/edit_profile_cubit.dart';
 import '../states/edit_profile_states.dart';
@@ -21,10 +20,12 @@ class EditProfileScreen extends StatelessWidget {
           var editProfile = EditProfileCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              leading: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-                size: 20,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back_ios),
+                iconSize: 20.0,
               ),
               title: Padding(
                 padding: const EdgeInsets.only(
@@ -47,7 +48,7 @@ class EditProfileScreen extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       AuthField(
                         label: 'Name',
@@ -88,28 +89,8 @@ class EditProfileScreen extends StatelessWidget {
                         suffixIcon: Icons.remove_red_eye,
                         hintText: 'Password801',
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0),
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                                context, ForgetPasswordScreen.route);
-                          },
-                          style: ButtonStyle(
-                            overlayColor: MaterialStatePropertyAll(
-                              const Color(0XFFFF891D).withAlpha(30),
-                            ),
-                          ),
-                          child: Text(
-                            'Forget Password?',
-                            style: Theme.of(context)
-                                .textTheme
-                                .displaySmall!
-                                .copyWith(
-                                  color: const Color(0XFFFF891D),
-                                ),
-                          ),
-                        ),
+                      const SizedBox(
+                        height: 30.0,
                       ),
                       DefaultButton(
                         label: 'Apply Changes',
@@ -122,11 +103,7 @@ class EditProfileScreen extends StatelessWidget {
                             desc: 'Are you sure to edit your information',
                             btnCancelOnPress: () {},
                             btnOkOnPress: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const LoginScreen(),
-                                  ));
+                              Navigator.pushNamed(context, LoginScreen.route);
                             },
                           ).show();
                         },

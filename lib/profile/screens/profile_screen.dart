@@ -109,32 +109,12 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20.0,
                 ),
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width / 1.2,
-                  height: buttonHeight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, DeleteProfileScreen.route);
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                        Colors.red.withAlpha(220),
-                      ),
-                      shape: MaterialStatePropertyAll<OutlinedBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                    ),
-                    child: Text(
-                      'Delete Account',
-                      style:
-                          Theme.of(context).textTheme.displayMedium!.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                    ),
-                  ),
+                DefaultButton(
+                  label: 'Delete Account',
+                  onPressed: () {
+                    Navigator.pushNamed(context, DeleteProfileScreen.route);
+                  },
+                  color: Colors.redAccent,
                 ),
               ],
             ),

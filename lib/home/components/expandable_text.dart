@@ -30,31 +30,31 @@ class _ExpandableTextState extends State<ExpandableText> {
         widget.isExpanded
             ? TextButton(
                 onPressed: () => setState(() => widget.isExpanded = false),
+                style: ButtonStyle(
+                  overlayColor: MaterialStatePropertyAll(
+                    primaryColor.withAlpha(100),
+                  ),
+                ),
                 child: Text(
                   'Show less',
                   style: Theme.of(context).textTheme.displaySmall!.copyWith(
                         color: primaryColor,
                       ),
                 ),
-                style: ButtonStyle(
-                  overlayColor: MaterialStatePropertyAll(
-                    primaryColor.withAlpha(100),
-                  ),
-                ),
               )
             : TextButton(
-                child: Text(
-                  'Show More',
-                  style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                        color: primaryColor,
-                      ),
-                ),
                 style: ButtonStyle(
                   overlayColor: MaterialStatePropertyAll(
                     primaryColor.withAlpha(100),
                   ),
                 ),
                 onPressed: () => setState(() => widget.isExpanded = true),
+                child: Text(
+                  'Show More',
+                  style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                        color: primaryColor,
+                      ),
+                ),
               ),
       ],
     );

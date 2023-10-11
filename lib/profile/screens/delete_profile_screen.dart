@@ -5,7 +5,6 @@ import 'package:uni_project/authentication/authentication_components/auth_field.
 import 'package:uni_project/authentication/authentication_components/default_button.dart';
 import 'package:uni_project/profile/cubit/delete_profile_cubit.dart';
 
-import '../../authentication/screens/forget_password_screen.dart';
 import '../../authentication/screens/login_screen.dart';
 import '../states/delete_profile_states.dart';
 
@@ -20,10 +19,12 @@ class DeleteProfileScreen extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
-              leading: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-                size: 20,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back_ios),
+                iconSize: 20.0,
               ),
               title: Padding(
                 padding: const EdgeInsets.only(
@@ -46,7 +47,7 @@ class DeleteProfileScreen extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       AuthField(
                         label: 'Write delete',
@@ -64,28 +65,8 @@ class DeleteProfileScreen extends StatelessWidget {
                         suffixIcon: Icons.remove_red_eye,
                         hintText: 'write current password',
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0),
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                                context, ForgetPasswordScreen.route);
-                          },
-                          style: ButtonStyle(
-                            overlayColor: MaterialStatePropertyAll(
-                              const Color(0XFFFF891D).withAlpha(30),
-                            ),
-                          ),
-                          child: Text(
-                            'Forget Password?',
-                            style: Theme.of(context)
-                                .textTheme
-                                .displaySmall!
-                                .copyWith(
-                                  color: const Color(0XFFFF891D),
-                                ),
-                          ),
-                        ),
+                      const SizedBox(
+                        height: 30.0,
                       ),
                       DefaultButton(
                         label: 'Delete',

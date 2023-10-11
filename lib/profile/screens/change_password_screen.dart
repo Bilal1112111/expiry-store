@@ -20,10 +20,12 @@ class ChangePasswordScreen extends StatelessWidget {
           var changePasswordCubit = ChangePasswordCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              leading: Icon(
-                Icons.arrow_back_ios,
-                size: 20,
-                color: Colors.white,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back_ios),
+                iconSize: 20.0,
               ),
               title: Padding(
                 padding: const EdgeInsets.only(

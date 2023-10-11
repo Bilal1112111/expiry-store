@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:uni_project/home/components/customized_rating_bar.dart';
 
 import '../../constant.dart';
 import 'expandable_text.dart';
@@ -40,22 +40,7 @@ class ListOfComments extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      RatingBar.builder(
-                        initialRating: 3,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemSize: 15.0,
-                        glowColor: Colors.amber,
-                        itemBuilder: (context, _) => const Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
-                        onRatingUpdate: (rating) {
-                          print(rating);
-                        },
-                      ),
+                      CustomizedRatingBar(itemSize: 15),
                       const SizedBox(
                         width: 10.0,
                       ),

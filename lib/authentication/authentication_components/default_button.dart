@@ -9,10 +9,12 @@ class DefaultButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.width,
+    this.color = primaryColor,
   });
   String label;
   double? width;
   void Function()? onPressed;
+  Color? color;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,7 +23,7 @@ class DefaultButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor: const MaterialStatePropertyAll(primaryColor),
+          backgroundColor: MaterialStatePropertyAll(color),
           shape: MaterialStatePropertyAll<OutlinedBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
