@@ -5,6 +5,7 @@ import 'package:uni_project/authentication/screens/register_screen.dart';
 import '../../constant.dart';
 import '../authentication_components/auth_field.dart';
 import '../authentication_components/default_button.dart';
+import '../authentication_components/login_with_google.dart';
 import '../cubit/login_cubit.dart';
 import '../states/login_states.dart';
 import 'forget_password_screen.dart';
@@ -128,48 +129,7 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      SizedBox(
-                        width: MediaQuery.sizeOf(context).width / 1.2,
-                        height: buttonHeight,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            elevation: const MaterialStatePropertyAll(5),
-                            backgroundColor:
-                                const MaterialStatePropertyAll(Colors.white),
-                            shape: MaterialStatePropertyAll<OutlinedBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(borderRadius),
-                                side: const BorderSide(
-                                  color: Colors.white,
-                                  width: 0,
-                                ),
-                              ),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: 30,
-                                child: Image.asset('assets/icons/google.png'),
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              const Text(
-                                'Login With Google',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      const WithGoogle(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

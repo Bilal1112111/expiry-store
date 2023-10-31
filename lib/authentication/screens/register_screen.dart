@@ -7,6 +7,7 @@ import 'package:uni_project/authentication/states/register_states.dart';
 import '../../constant.dart';
 import '../authentication_components/auth_field.dart';
 import '../authentication_components/default_button.dart';
+import '../authentication_components/register_texts.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -52,21 +53,7 @@ class RegisterScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Sign up',
-                        style: Theme.of(context).textTheme.displayLarge,
-                      ),
-                      Text(
-                        'To browse endless',
-                        style: Theme.of(context).textTheme.displaySmall,
-                      ),
-                      Text(
-                        'products',
-                        style:
-                            Theme.of(context).textTheme.displaySmall!.copyWith(
-                                  fontWeight: FontWeight.w500,
-                                ),
-                      ),
+                      const RegisterTexts(),
                       const SizedBox(
                         height: 30,
                       ),

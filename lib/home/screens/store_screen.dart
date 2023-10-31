@@ -6,6 +6,7 @@ import '../../constant.dart';
 import '../components/comment_card.dart';
 import '../components/customized_drop_menu.dart';
 import '../components/customized_rating_bar.dart';
+import '../components/product_card.dart';
 import '../components/store_screen_app_bar.dart';
 import '../cubit/store_cubit.dart';
 
@@ -23,7 +24,7 @@ class StoreScreen extends StatelessWidget {
             appBar: PreferredSize(
               preferredSize: Size(
                   double.infinity, MediaQuery.of(context).size.height / 2.25),
-              child: StoreScreenAppBar(),
+              child: const StoreScreenAppBar(),
             ),
             body: Padding(
               padding: const EdgeInsets.symmetric(
@@ -31,6 +32,7 @@ class StoreScreen extends StatelessWidget {
                 horizontal: 20,
               ),
               child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
                 child: SizedBox(
                   width: double.infinity,
                   child: Column(
@@ -41,7 +43,7 @@ class StoreScreen extends StatelessWidget {
                             flex: 2,
                             child: Container(
                               // width: MediaQuery.sizeOf(context).width * 0.35,
-                              height: 120,
+                              height: 140,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20.0),
                                 color: const Color(0XFFE6F9F2),
@@ -66,7 +68,7 @@ class StoreScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.sizeOf(context).width * 0.018,
                           ),
-                          Expanded(
+                          const Expanded(
                             flex: 3,
                             child: CommentCard(),
                           ),
@@ -89,8 +91,27 @@ class StoreScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          child: CustomizedDropDownMenu(),
+                          child: const CustomizedDropDownMenu(),
                         ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      GridView.builder(
+                        padding: const EdgeInsets.all(5),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing:
+                              MediaQuery.sizeOf(context).width * 0.02,
+                          mainAxisSpacing:
+                              MediaQuery.sizeOf(context).height * 0.02,
+                          mainAxisExtent:
+                              MediaQuery.sizeOf(context).height * 0.36,
+                        ),
+                        itemBuilder: (context, index) => const ProductCard(),
+                        itemCount: 10,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
                       ),
                     ],
                   ),

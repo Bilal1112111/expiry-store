@@ -6,7 +6,6 @@ import 'package:uni_project/authentication/cubit/login_cubit.dart';
 import 'package:uni_project/authentication/cubit/new_password_cubit.dart';
 import 'package:uni_project/authentication/cubit/otp_cubit.dart';
 import 'package:uni_project/home/cubit/comments_cubit.dart';
-import 'package:uni_project/home/screens/comments_screen.dart';
 import 'package:uni_project/layout/states/app_states.dart';
 import 'package:uni_project/profile/cubit/change_password_cubit.dart';
 import 'package:uni_project/profile/cubit/delete_profile_cubit.dart';
@@ -17,6 +16,7 @@ import 'authentication/cubit/register_cubit.dart';
 import 'constant.dart';
 import 'home/cubit/home_cubit.dart';
 import 'home/cubit/store_cubit.dart';
+import 'home/screens/store_screen.dart';
 import 'layout/cubit/app_cubit.dart';
 
 void main() {
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             theme: appTheme,
             routes: routes,
-            initialRoute: CommentsScreen.route,
+            initialRoute: StoreScreen.route,
             debugShowCheckedModeBanner: false,
           );
         },

@@ -1,4 +1,5 @@
 import 'package:uni_project/home/screens/comments_screen.dart';
+import 'package:uni_project/home/screens/product_screen.dart';
 import 'package:uni_project/profile/screens/change_password_screen.dart';
 import 'package:uni_project/profile/screens/delete_profile_screen.dart';
 import 'package:uni_project/profile/screens/profile_screen.dart';
@@ -29,4 +30,5 @@ var routes = {
   StoreScreen.route: (context) => const StoreScreen(),
   HomeScreen.route: (context) => const HomeScreen(),
   Layout.route: (context) => const Layout(),
+  ProductScreen.route: (context) => const ProductScreen(),
 };
